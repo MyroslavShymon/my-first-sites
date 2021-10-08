@@ -1,0 +1,36 @@
+.wrap_menu{
+	display:inline-block;
+	overflow:visible;
+	height:30px;
+	vertical-align:top;
+}
+
+.but_menu{
+	font-size:18px;
+	font-family: greece;
+	font-weight: bold;
+	letter-spacing:3px;
+	line-height:30px;
+	padding:0 15px;
+	color: #a55e2a;
+	cursor:pointer;
+	
+}
+.block_menu{
+	height:0px;
+	display:block;
+	overflow:hidden;
+	transition:0.2s;
+}
+.cont_menu{
+	display:block;
+	background: #FFEBCC;
+	color: #a55e2a;
+	padding:3px 0;
+	cursor:pointer;
+}
+.but_menu:hover, .cont_menu:hover{
+	
+	color:white;
+	background:#a55e2a;
+}

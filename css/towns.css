@@ -1,0 +1,33 @@
+#name_town{
+	display:block;
+	margin-top:20px;
+	font-size:25px;
+	font-weight:bold;
+	font-family:greece;
+	letter-spacing:6px;
+	
+}
+#pic_town, #about_town{
+	display:inline-block;
+	margin-top:10px;
+	vertical-align:middle;
+}
+#pic_town img{max-width:500px;max-height:300px;}
+#year, #contr{
+	display:block;
+	font-size:30px;
+	font-weight:bold;
+	margin-left:30px;
+	text-shadow: 2px 2px 5px #66420b, 2px 2px 5px #66420b;
+	font-family:greece;
+	cursor:pointer;
+}
+#txt_about_town{
+	display:block;
+	font-weight:bold;
+	font-family:greece;
+	font-size:15px;
+	text-shadow: 2px 2px 5px #66420b, 2px 2px 5px #66420b;
+	cursor:pointer;
+	
+}

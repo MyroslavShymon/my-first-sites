@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>World</title>
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/menu.css" />
+	<link rel="stylesheet" href="css/towns.css" />
+</head>
+<body>
+<div class='back' style='text-align:left;'></div>
+<div id='wrap'>
+	<div class='out_main'>
+		<div class='main'></div>
+	</div>
+	<div class='main_cont'>
+		<div id='name_town'></div>
+		<div id='pic_town'></div>
+		<div id='about_town'>
+			<div id='year'></div>
+			<div id='contr'></div>
+		</div>
+		<div id='txt_about_town'></div>
+	</div>
+	<div class='l_col'></div>
+	<div class='r_col'></div>
+	
+	<div class='m_out'>
+		<div class='back_bord'>
+		<div class='top_col1'></div>
+		<div class='top_col2'></div>
+		<div class='top_col3'></div>
+		<div class='top_col4'></div>
+		<div class='top_col5'></div>
+		<div class='top_col6'></div>
+			<div class='out_fnt'>
+				<div class='fnt'>
+				<div class='decor decor_lt'></div>
+				<div class='decor decor_rt'></div>
+				<div class='decor decor_lb'></div>
+				<div class='decor decor_rb'></div>
+				ГОРОДА ДРЕВНЕГО МИРА</div>
+			</div>
+		</div>
+		
+		<div class='in_pank1'></div>
+		<div class='in_pank2'></div>
+		<div class='out_pank'></div>
+		<div id='menu' class='out_pank_m'></div>
+		
+		
+	</div>
+	<div class='b_out'>
+		<div class='in_pank3'></div>
+		<div class='in_pank4'></div>
+		<div class='in_pank5'></div>
+		<div class='in_pank6'></div>
+	</div>
+	
+</div>
+
+<script>
+
+$('.top_col1, .top_col2, .top_col3, .top_col4, .top_col5, .top_col6').load("blocks/top_col.html");
+$('.r_col, .l_col').load("blocks/col.html");
+$('#menu').load("blocks/menu.html");
+function rsz(){
+	var hb=$('body').height();
+	wb=$('body').width();
+	$('#wrap').outerHeight(hb);
+	$('#wrap').outerWidth(wb-200);
+	wrw=$('#wrap').outerWidth();
+	$('.m_out, .b_out').outerWidth(wrw);
+	$('.l_col, .r_col, .main, .col, .out_main, .main_cont').outerHeight(hb - 180);
+	$('.l_col, .r_col').css('perspective', hb);
+	$('.top_col1, .top_col2, .top_col3, .top_col4, .top_col5, .top_col6').css('perspective', '67px');
+	$('.main, .out_main').outerWidth(wrw-300);
+	$('.main_cont').outerWidth(wrw-400);
+	$('.out_pank, .out_pank_m').outerWidth(wrw);
+	$('.in_pank1, .in_pank2').outerWidth(wrw-30);
+	$('.in_pank3').outerWidth(wrw-100);
+	$('.in_pank4').outerWidth(wrw-70);
+	$('.in_pank5').outerWidth(wrw-40);
+	$('.in_pank6').outerWidth(wrw-10);
+	$('.back_bord').outerWidth(wrw-110);
+	$('.colin').outerHeight(hb-292);
+}
+$(window).resize(function(){rsz();});
+$(document).ready(function(){
+
+rsz();});
+</script>
+</body>
+
+</html>

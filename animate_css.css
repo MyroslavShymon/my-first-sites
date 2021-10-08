@@ -1,0 +1,48 @@
+body{
+	text-align:center;
+	width:100%;
+	height:100%;
+}
+[class^="divan"]{
+	width:100px;
+	height:100px;
+	border:2px solid green;
+	display:inline-block;
+	
+}
+.divan1{
+	animation-timing-function: ease, linear;
+	animation-duration:3s, 5s;
+	animation-name: rot_r, rot_l;
+	animation-iteration-count:infinite;
+}
+.divan2{
+	animation-timing-function: ease, linear;
+	animation-duration:3s, 5s;
+	animation-name: rot_r2, rot_l2;
+	animation-iteration-count:infinite;
+}
+@keyframes rot_r{
+	from {border-radius:0px;border-width:2px;transform: translate(0px,0) rotate(0deg);width:100px;height:100px;}
+	50% {border-radius:50px;border-width:8px;transform: translate(350px,0) rotate(180deg);width:300px;height:300px;}
+	to {border-radius:0px;transform:rotate(360deg);border-width:2px;transform: translate(0px,0) rotate(0deg);width:100px;height:100px;}
+	
+}
+@keyframes rot_l{
+	from {border-color:red;background:pink;}
+	33% {border-color:orange;background:yellow;}
+	66% {border-color:green;background:lime;}
+	to {border-color:red;background:pink;}
+}
+@keyframes rot_r2{
+	from {border-radius:0px;border-width:2px;transform: translate(0px,0) rotate(0deg);width:100px;height:100px;}
+	50% {border-radius:50px;border-width:8px;transform: translate(-350px,0) rotate(180deg);width:300px;height:300px;}
+	to {border-radius:0px;transform:rotate(360deg);border-width:2px;transform: translate(0px,0) rotate(0deg);width:100px;height:100px;}
+	
+}
+@keyframes rot_l2{
+	from {border-color:red;background:pink;}
+	33% {border-color:orange;background:yellow;}
+	66% {border-color:green;background:lime;}
+	to {border-color:red;background:pink;}
+}
