@@ -1,0 +1,29 @@
+.menu{
+	display:inline-block;
+	border:2px solid #000cff;
+	height:60px;
+	width:100px;
+	cursor:pointer;
+	margin-bottom:10px;
+}
+.menu:hover{
+	border:2px solid #abfcff;
+}
+.mnOt{border:2px solid cyan;}
+#nyc{background:url('../images/nyc.jpg');}
+#bgb{background:url('../images/bgb.jpg');}
+#park{background:url('../images/park.jpg');}
+#sea{background:url('../images/sea.jpg');}
+#sun{background:url('../images/sun.jpg');}
+#water{background:url('../images/water.jpg');}
+#starwars{background:url('../images/starwars.jpg');}
+#child{background:url('../images/child.jpg');}
+#paris{background:url('../images/paris.jpg');}
+#apple{background:url('../images/apple.jpg');}
+#nyc,#bgb,#park,#sea,#sun,#water,#starwars,#child,#paris,#apple{background-size:100% 100%;}
+#txt{
+	text-align:center;
+	color:brown;
+	font-size:25px;
+	font-weight:bold;
+}

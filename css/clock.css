@@ -1,0 +1,22 @@
+@font-face {
+    font-family: clock;
+    src: url(../fonts/clock.ttf);
+}
+.all_clock{
+	padding:5px;
+	display:inline-block;
+	background:white;
+	border-radius:4px;
+	color:yellow;
+	border:1px solid grey;
+}
+.wrap_clock{background-image: linear-gradient(rgb(255, 222, 129), rgb(236, 208, 128) 50%, rgb(255, 180, 0) 50%, rgb(255, 189, 0));border-radius:4px;}
+.tdclock, .dtclock{display:inline-block;vertical-align:middle;padding:0 5px;margin:0;}
+.tdclock{font-family:clock;}
+.mto, .mto1{display:inline-block;font-size:35px;vertical-align:middle;}
+.mto1{color:black;}
+.dtcl, .weekday{line-height:18px;}
+.red{background:red;}
+.green{background:green;}
+.sqere, .sircle{height:50px;width:50px;display:inline-block;}
+.sircle{border-radius:50px;}

@@ -1,0 +1,98 @@
+
+
+		<div class='smallwinbl'onclick='showOpOf(this);'>
+			<div class='txtblofwin'>&#9641;</div>
+			<div class='txtblofnoth1'>Window</div>	
+		
+		</div>
+		<div class='smallclbl' gtt='2' onclick='showOpOf(this);'>
+			
+			<div class='txtblofcl'>&#128336;</div>
+			<div class='txtblofnoth2'>Clock</div>
+
+		</div>
+		<div class='menu_bg mshbl1'>	
+				<div style='vertical-align:middle;margin-left:30px;'>
+					<div class='buttons' >
+						<div class='mid_but' onclick='rotRoll();'>
+						<div class='txt_but'>&#8635;</div>
+						</div>
+					</div>
+					<br><br>
+					<div class='buttons1' >
+						<div class='mid_but' onclick='rotClick();moveBlin(); '>
+						<div class='txt_butn'>&#9664;</div>
+						</div>
+					</div>
+					<br>
+					<select id='sel' onchange='selGo()'>
+						<option>10</option>
+						<option>12</option>
+					</select>
+				</div>
+				<div class='menu' id='sea' onclick='firstFunc(this);'chang='2_1'></div>
+				<div class='menu' id='child' onclick='firstFunc(this);'chang='1_1'></div>
+				<div class='menu' id='starwars' onclick='firstFunc(this);'chang='0_2'></div>
+				<div class='menu' id='sun' onclick='firstFunc(this);'chang='3_2'></div>
+				<div class='menu' id='nyc' onclick='firstFunc(this);'chang='0_0'></div>
+				<div class='menu' id='bgb' onclick='firstFunc(this);'chang='3_0'></div>
+				<div class='menu' id='park' onclick='firstFunc(this);'chang='2_1'></div>
+				<div class='menu' id='water' onclick='firstFunc(this);'chang='1_1'></div>
+				<div class='menu' id='apple' onclick='firstFunc(this);'chang='1_2'></div>
+				<div class='menu' id='paris' onclick='firstFunc(this);'chang='0_2'></div>
+			</div>
+		
+		
+			<div class='all_op mshbl2' style='display:none;'>
+					<div id='selctop' value='0'></div>
+						<label style='display:inline-block;'>Цвет цифр:<br>
+								<select style='min-width:90px;' id='sel_col_fon'>
+									<option value='0' >Жёлтый</option>
+									<option value='1' >Белый</option>
+									<option value='2' >Зелёный</option>
+									<option value='3' >Красный</option>
+									<option value='4' >Голубой</option>
+								</select>
+						</label>&nbsp;&nbsp;&nbsp;&nbsp;
+						<label style='display:inline-block;'>Цвет стекла:<br>
+							<select style='min-width:90px;' id='sel_col_win'>
+								<option value='0' >Коричневый</option>
+								<option value='1' >Синий</option>
+								<option value='2' >Чёрный</option>
+								<option value='3' >Красный</option>
+							</select>
+						</label>
+					
+					<br><br>
+						<input type='button' value='&#10133;' onclick='addCl();'><br><br>
+						<input type='button' value='Авто тон' onclick='autoChange();'>
+				</div>
+		<div class='bigbl'></div>
+<script>
+function showOpOf(el){
+$('[name^="mshbl"]').hide();
+gtt=$(el).attr('gtt');
+console.log(gtt);
+$('.mshbl'+gtt+'').show();
+//$(el).next('.mshbl').show();
+}
+function disAp(){
+roll_txt2=$(".back_bl_rot");
+roll_txt2.toggleClass('.txt_rolingnn txt_rolingnn1');
+roll_txt2.addClass('txt_rolingnn');
+}
+function hd_sw(){
+	eee =$('#hdn1').val();
+	switch(eee){
+		case'0':
+		$('.bigawesomebl').show("slow");
+		$('#hdn1').val(1);
+		break;
+		case'1':
+		$('.bigawesomebl').hide("slow");
+		$('#hdn1').val(0);
+		break;
+	}
+}
+
+</script>	

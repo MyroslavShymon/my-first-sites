@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Window</title>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/clock.css" />
+    <link rel="stylesheet" href="css/setting.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/table.css" />
+  </head>
+  <body>
+    <div id="jsgl" style="display: none"></div>
+    <div class="wrap">
+      <div class="altbl" style="display: block"></div>
+      <div id="txt"></div>
+      <br /><br />
+      <!-- Часы -->
+      <div class="big_cl_w_op">
+        <div class="all_clock">
+          <div class="wrap_clock">
+            <div class="tdclock">
+              <div id="hour" class="mto"></div>
+              <div id="mto" class="mto">:</div>
+              <div id="minute" class="mto"></div>
+            </div>
+            <div class="dtclock">
+              <div class="dtcl"></div>
+              <div class="weekday"></div>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+      </div>
+
+      <div class="modal_back" onclick="modal_back_cl();">
+        <div class="modal_bl">
+          <div class="modal_cl" onclick="modal_back_cl();">X</div>
+          <div id="txtmod"></div>
+        </div>
+      </div>
+
+      <script>
+        function showModal(el) {
+          idft = $(el).attr("id");
+          $(".modal_back").css("display", "block");
+          rusName(idft); //переменная
+          $("#txtmod").html(rrr);
+        }
+        //сначала берёр id потом выбераем задний блок модала и показываем его после этого русифицыреум и добавляем в блок с текстом в модале вставляем текст
+        function all_sumBlocks(el) {
+          var hhhh = $(el).html();
+          var newzh = $(el).attr("nwzh");
+          var newob = $(el).attr("nwob");
+          var newchs = $(el).attr("nwchs");
+          $("#txtmod").html(
+            "Цена-обоев: " +
+              newob +
+              "<br>Цена-часов: " +
+              newchs +
+              "<br>Цена-жалюзи: " +
+              newzh +
+              "<br>" +
+              hhhh
+          );
+          $(".modal_back").css("display", "block");
+        }
+        //сначала выбераем текст и атрибуты которые создали в глобале потом в блок с текстом в модале выведем их после этого показываем задний фон модала
+        function modal_back_cl() {
+          $(".modal_back").css("display", "none"); //не показывать
+        }
+        //задний фон модала не показываем
+        function hd_sw() {
+          removeClassBut();
+          eee = $("#hdn1").val();
+          switch (eee) {
+            case "0":
+              $(".bigawesomebl").show("slow");
+              $("#hdn1").val(1);
+              break;
+            case "1":
+              $(".bigawesomebl").hide("slow");
+              $("#hdn1").val(0);
+              break;
+          }
+        }
+        //Вставляем переменную в которм зоабрали клас с кнопок далее забираем val с hdn1 после вкючяем её и делаем условие если берём val 0 то блок мэню показываем медленно и ставим val 1 а потом с val 1 этот же блок закорываем медленно и ставем val 0
+        function addCls() {
+          var valclr = $("#sel_col_clr").val();
+          var valwrap = $("#sel_col_wrap").val();
+          ttrr(valclr, valwrap);
+        }
+        //Сначала беорём val с блоков с option и делаем функцию
+        function ttrr(valclr, valwrap) {
+          var massclr = [
+            "lime",
+            "brown",
+            "white",
+            "blue",
+            "pink",
+            "yellow",
+            "red",
+          ]; //масив цветов
+          var vmc = massclr[valclr];
+          var masswrap = [
+            [
+              "#f3fad2",
+              "#fffdd7",
+              "#f6fac7",
+              "#fffdd7",
+              "#f6fac7",
+              "#fffdd7",
+              "#f3fad2",
+            ],
+            [
+              "#f9c328",
+              "#ffc92d",
+              "#ffb400",
+              "#ffc92d",
+              "#ffb400",
+              "#ffc92d",
+              "#f9c328",
+            ],
+            [
+              "rgb(212, 209, 204)",
+              "rgb(236, 232, 221)",
+              "rgb(200, 198, 193)",
+              "rgb(236, 232, 221)",
+              "rgb(200, 198, 193)",
+              "rgb(236, 232, 221)",
+              "rgb(212, 209, 204)",
+            ],
+            [
+              "#00e6ff",
+              "#6fe0e4",
+              "#aff9ff",
+              "#6fe0e4",
+              "#aff9ff",
+              "#6fe0e4",
+              "#00e6ff",
+            ],
+            [
+              "#ff7c7c",
+              "#f00",
+              "#ffd6d6",
+              "#f00",
+              "#ffd6d6",
+              "#f00",
+              "#ff7c7c",
+            ],
+            [
+              "#4a4a4a",
+              "#4e4e4e",
+              "#000",
+              "#4e4e4e",
+              "#000",
+              "#4e4e4e",
+              "#4a4a4a",
+            ],
+          ];
+          $("#txt").css("color", vmc);
+          $(".wrap").css(
+            "background",
+            "repeating-linear-gradient(90deg, " +
+              masswrap[valwrap][0] +
+              ", " +
+              masswrap[valwrap][1] +
+              " 2px, " +
+              masswrap[valwrap][2] +
+              " 10px, " +
+              masswrap[valwrap][3] +
+              " 12px," +
+              masswrap[valwrap][4] +
+              " 18px," +
+              masswrap[valwrap][5] +
+              " 20px," +
+              masswrap[valwrap][6] +
+              " 30px)"
+          );
+          $("#sel_col_wrap").val(valwrap);
+          calc();
+        }
+        //Сначала во функцию которую мы сделали кидаем масив цветов шрифта и масив цветов заднегоо фона в блок с текстом вставляем масив цветов и в фон масив
+        function addCl() {
+          var valwin = $("#sel_col_win").val();
+          var valfnt = $("#sel_col_fon").val();
+          fftt(valwin, valfnt);
+        }
+        //Сначала беорём val с блоков с option и делаем функцию
+        function fftt(valwin, valfnt) {
+          var massfnt = ["yellow", "white", "lime", "red", "cyan", "grey"]; //цвета шрифта
+          var vmf = massfnt[valfnt];
+          var masswin = [
+            ["#ffde81", "#ecd080", "#ffb400", "#FFBD00"],
+            ["#81caff", "#4b9de3", "#0039ff", "#84B1FF"],
+            ["#dbe2ea", "#77787e", "#5a5a62", "#000"],
+            ["#ffdfdf", "#ff8787", "#f00", "#F5B1B1"],
+          ];
+          $(".all_clock").css("color", vmf);
+          $(".wrap_clock").css(
+            "background-image",
+            "linear-gradient(" +
+              masswin[valwin][0] +
+              ", " +
+              masswin[valwin][1] +
+              " 50%, " +
+              masswin[valwin][2] +
+              " 50%," +
+              masswin[valwin][3] +
+              ")"
+          );
+          $("#sel_col_win").val(valwin);
+          calc();
+        }
+        //Сначала во функцию которую мы сделали кидаем масив цветов заднегоо фона часов и масив цветов заднегоо фона в блок с текстом вставляем масив цветов и в фон масив
+        function autoChange() {
+          art = $(".mnOt").attr("chang");
+          colors = art.split("_");
+          valmin = colors[0];
+          valwin = colors[1];
+          valwrap = colors[2];
+          valclr = colors[3];
+          fftt(valwin, valmin);
+          ttrr(valclr, valwrap);
+        } //сделали авто выбор
+      </script>
+      <!-- Левое -->
+      <div class="window_wrap wrap1">
+        <div class="col">
+          <div class="stick"></div>
+          <div class="b_st1"></div>
+          <div class="b_st2"></div>
+          <div class="sls1">
+            <div class="rnd1"></div>
+            <div class="rnd2"></div>
+          </div>
+          <div class="sls2">
+            <div class="rnd3"></div>
+            <div class="rnd4"></div>
+          </div>
+        </div>
+        <div class="bgb">
+          <div class="vertical_line"></div>
+          <div class="gorizontal_line"></div>
+          <div class="bbb"></div>
+          <div class="bbb2">
+            <div class="hand"></div>
+            <div class="in_hand"></div>
+          </div>
+          <div class="shd1"></div>
+          <div class="shd2"></div>
+          <div class="shd3"></div>
+          <div class="shd4"></div>
+          <div class="sun"></div>
+        </div>
+      </div>
+      <!-- Правое -->
+      <div class="window_wrap wrap2">
+        <div class="col">
+          <div class="stick"></div>
+          <div class="b_st1"></div>
+          <div class="b_st2"></div>
+          <div class="sls1">
+            <div class="rnd1"></div>
+            <div class="rnd2"></div>
+          </div>
+          <div class="sls2">
+            <div class="rnd3"></div>
+            <div class="rnd4"></div>
+          </div>
+        </div>
+        <div class="bgb">
+          <div class="vertical_line"></div>
+          <div class="gorizontal_line"></div>
+          <div class="bbb"></div>
+          <div class="bbb2">
+            <div class="hand"></div>
+            <div class="in_hand"></div>
+          </div>
+          <div class="shd1"></div>
+          <div class="shd2"></div>
+          <div class="shd3"></div>
+          <div class="shd4"></div>
+        </div>
+      </div>
+      <br />
+      <div id="sum" onclick="all_sumBlocks(this);" class="sumcl"></div>
+    </div>
+    <br /><br />
+    <input id="hdn" type="hidden" />
+    <input id="hdn1" type="hidden" />
+    <input id="hdn2" type="hidden" />
+    <div class="menu_set">
+      <div class="cool_but">
+        <div class="back_bl" onclick="hd_sw();">&#9881;</div>
+        <div class="bot_line"></div>
+      </div>
+
+      <div class="bigawesomebl">
+        <div id="zhal" class="smallwinbl" onclick="showOpOf(this);" gtt="1">
+          Жалюзи
+          <div class="arr_down">&#9664;</div>
+        </div>
+        <div class="smallwinbl" gtt="2" onclick="showOpOf(this);">
+          Часы
+          <div class="arr_down">&#9664;</div>
+        </div>
+        <div class="smallwinbl" gtt="3" onclick="showOpOf(this);">
+          Авто тон
+          <div class="arr_down">&#9664;</div>
+        </div>
+        <div class="smallwinbl" gtt="4" onclick="showOpOf(this);">
+          Обои и наиминования
+          <div class="arr_down">&#9664;</div>
+        </div>
+        <hr />
+        <div class="menu_bg mshbl1">
+          <div style="vertical-align: middle; margin-bottom: 10px">
+            <div class="buttons">
+              <div class="mid_but" onclick="rotRoll();">
+                <div class="txt_but">&#8635;</div>
+              </div>
+            </div>
+            <div class="buttons1">
+              <div class="mid_but" onclick="rotClick();moveBlin();">
+                <div class="txt_butn">&#9664;</div>
+              </div>
+            </div>
+            <select id="sel" onchange="selGo();newSelgo();">
+              <option value="10">10</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          <div id="sum_and_min_ResOfMenu"></div>
+          <div
+            class="menu mn1"
+            id="sea"
+            price="270"
+            onclick="showModal(this);firstFunc(this);"
+            chang="2_1_3_0"
+          ></div>
+          <div
+            class="menu mn2"
+            id="child"
+            price="230"
+            onclick="showModal(this);firstFunc(this);"
+            chang="1_1_3_0"
+          ></div>
+          <div
+            class="menu mn3"
+            id="starwars"
+            price="220"
+            onclick="showModal(this);firstFunc(this);"
+            chang="0_2_5_5"
+          ></div>
+          <div
+            class="menu mn4"
+            id="sun"
+            price="290"
+            onclick="showModal(this);firstFunc(this);"
+            chang="3_2_5_6"
+          ></div>
+          <div
+            class="menu mn5"
+            id="nyc"
+            price="300"
+            onclick="showModal(this);firstFunc(this);"
+            chang="0_0_1_1"
+          ></div>
+          <div
+            class="menu mn6"
+            id="bgb"
+            price="270"
+            onclick="showModal(this);firstFunc(this);"
+            chang="5_0_2_1"
+          ></div>
+          <div
+            class="menu mn7"
+            id="park"
+            price="400"
+            onclick="showModal(this);firstFunc(this);"
+            chang="2_1_0_0"
+          ></div>
+          <div
+            class="menu mn8"
+            id="water"
+            price="250"
+            onclick="showModal(this);firstFunc(this);"
+            chang="1_1_3_3"
+          ></div>
+          <div
+            class="menu mn9"
+            id="apple"
+            price="240"
+            onclick="showModal(this);firstFunc(this);"
+            chang="1_2_5_2"
+          ></div>
+          <div
+            class="menu mn10"
+            id="paris"
+            price="210"
+            onclick="showModal(this);firstFunc(this);"
+            chang="0_2_5_5"
+          ></div>
+        </div>
+        <div class="all_op mshbl2" style="display: none">
+          <div id="selctop"></div>
+          <label style="display: inline-block; color: #abfcff"
+            >Цвет цифр:<br />
+            <select id="sel_col_fon">
+              <option value="0">Жёлтый</option>
+              <option value="1">Белый</option>
+              <option value="2">Зелёный</option>
+              <option value="3">Красный</option>
+              <option value="4">Голубой</option>
+              <option value="5">Серый</option>
+            </select> </label
+          >&nbsp;&nbsp;&nbsp;&nbsp;
+          <label style="display: inline-block; color: #abfcff"
+            >Цвет стекла:<br />
+            <select id="sel_col_win">
+              <option value="0" class="chas1" price="300">Коричневый</option>
+              <option value="1" class="chas2" price="370">Синий</option>
+              <option value="2" class="chas3" price="290">Чёрный</option>
+              <option value="3" class="chas4" price="320">Красный</option>
+            </select>
+          </label>
+          <br /><br />
+          <div id="sum_and_min_ResOfOb"></div>
+          <br /><br />
+          <div onclick="addCl();" id="but_prim1">Применить</div>
+        </div>
+        <div class="mshbl3" style="display: none">
+          <select id="selsel" onchange="rtrtr();">
+            <option>15</option>
+            <option>10</option>
+            <option>5</option>
+          </select>
+          <div onclick="autoChange();" id="but_prim3">Авто тон</div>
+        </div>
+        <div class="mshbl4" style="display: none">
+          <label style="display: inline-block; color: #abfcff"
+            >Цвет наиминования:<br />
+            <select id="sel_col_clr">
+              <option value="0">Лаймовый</option>
+              <option value="1">Коричневый</option>
+              <option value="2">Белый</option>
+              <option value="3">Голубой</option>
+              <option value="4">Розовый</option>
+              <option value="5">Жёлтый</option>
+              <option value="6">Красный</option>
+            </select>
+          </label>
+          <label style="display: inline-block; color: #abfcff"
+            >Цвет обоев:<br />
+            <select id="sel_col_wrap">
+              <option value="0" class="cob1" price="270" selected>
+                Зелёный
+              </option>
+              <option value="1" class="cob2" price="290">Жёлтый</option>
+              <option value="2" class="cob3" price="230">Серый</option>
+              <option value="3" class="cob4" price="240">Синий</option>
+              <option value="4" class="cob5" price="215">Красный</option>
+              <option value="5" class="cob6" price="300">Чёрный</option>
+            </select>
+          </label>
+          <br /><br />
+          <div id="sum_and_min_ResOfChas"></div>
+          <div onclick="addCls();" id="but_prim2">Применить</div>
+          <br />
+        </div>
+      </div>
+
+      <marquee
+        id="rollstr"
+        behavior="scroll"
+        bgcolor="#009cff"
+        direction="left"
+        style="color: #abfcff"
+        scrollamount="4"
+        scrolldelay="0"
+      ></marquee>
+    </div>
+    <script>
+      $("#jsgl").load("global.html");
+      //в блок загружаем глобол
+    </script>
+    <script>
+      function rtrtr() {
+        var slsl = $("#selsel").val();
+        var rtr = slsl == 15 ? "yes" : "no";
+        alert(rtr);
+      }
+
+      function removeClassBut() {
+        $(".txt_but, .txt_butn").removeClass("txt_roling1, txt_rolling");
+      }
+      //берём блоки с текстоами и забиоаем с них клас
+      function showOpOf(el) {
+        gtt = $(el).attr("gtt");
+        removeClassBut();
+        for (n = 1; n <= 10; n++) {
+          if (n != gtt) {
+            $(".mshbl" + n).slideUp();
+          }
+        }
+
+        $(".mshbl" + gtt + "").slideDown();
+        $(".arr_down").css("display", "none");
+        $(el).children(".arr_down").css("display", "block");
+      }
+      //берём атрибут gtt потом потом делаем два условия пеовое n=1;n<=10;n++ второе если  n не равно gtt то она поднимаеться вверх потом блок  mshbl один из них вниз потом блок с названиями не показываем и после этого поднимаеся в  детские и показываем
+      function getnewTmDt() {
+        setInterval("showDt() ", 1000);
+      }
+      //проверять каждых 1000млс
+      function gtday(today) {
+        tdd = today.getDay();
+        var weekday = [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "пятниця",
+          "saturday",
+        ]; //масив дней
+        return weekday[tdd];
+      }
+      //сначала вычесляем день потом делаем масив дней и вертаем этот масив
+      function showDt() {
+        var today = new Date();
+        today_year = today.getFullYear();
+        today_dt = today.getDate();
+        today_hour = today.getHours();
+        today_min = today.getMinutes();
+        today_mnth = today.getMonth() + 1;
+        if (today_mnth < 10) {
+          today_mnth = "0" + today_mnth;
+        }
+        if (today_dt < 10) {
+          today_dt = "0" + today_dt;
+        }
+        if (today_hour < 10) {
+          today_hour = "0" + today_hour;
+        }
+        if (today_min < 10) {
+          today_min = "0" + today_min;
+        }
+        // getHours(), getMinutes(), getSeconds(), getMilliseconds()
+        $(".dtcl").html(today_dt + "." + today_mnth + "." + today_year);
+        $("#hour").html(today_hour);
+        $("#minute").html(today_min);
+        $(".weekday").html(gtday(today));
+        mto = $("#mto");
+        mto.toggleClass("mto mto1");
+      }
+      //сначала берём новый день .год . час. минуту.месяц и делаем условие если месяц меньше 10 то к началу добавляем 0 так само и с чассами минутами днями вчконце добавляем в блок с датой  день месяц год в блок часами часи в блокминутами минуты в блок с днями недели неделю
+      function selGo() {
+        addingRolls();
+      }
+      function addingRolls() {
+        sel = $("#sel").val();
+
+        if (sel == "12") {
+          $(".window_wrap").width(266); //
+          $(".stick").width(264); //
+          $(
+            ".all_blind_bl_11,.all_blind_bl_12,.all_blind_bl_23,.all_blind_bl_24"
+          ).css("display", "block"); //показывать
+          yyy = $("#hdn").val();
+          for (n = 24; n >= 13; n--) {
+            var roll = $("[class='all_blind_bl_" + n + "']");
+            if (yyy == 0) {
+              var lft = 2 * (n - 10) + (n - 13) * 20 - 4;
+            } else {
+              var lft = 235 - (20 - (n * 2 - 20));
+            }
+            roll.css("left", lft);
+          }
+        } else {
+          $(".window_wrap").width(222);
+          $(".stick").width(220);
+          $(
+            ".all_blind_bl_11,.all_blind_bl_12,.all_blind_bl_23,.all_blind_bl_24"
+          ).css("display", "none");
+          yyy = $("#hdn").val();
+
+          for (n = 24; n >= 13; n--) {
+            var roll = $("[class='all_blind_bl_" + n + "']");
+
+            if (yyy == 0) {
+              var lft = 2 * (n - 10) + (n - 13) * 20;
+            } else {
+              var lft = 200 - (20 - (n * 2 - 20));
+            }
+            roll.css("left", lft);
+          }
+        }
+        calc();
+      }
+      //первое берём val выборки после делаем условие если выборка ровна 12 то блок с окном имеет ширину 266 а палка ширину 264 блок с жалюзями появляются и мы берём val hdn потом делаем условие по количеству n=24;n>=13;n-- если hdn равно 0 то lft =пропорция а нет то пропорция2  и делаем анимацию в лево lft но если hdn равно 1 то ширина блока с жалюзи 222 а блока с палкой 220 и все три маленьких жалюзей не показывается снова берём  val hdn потом делаем условие по количеству n=24;n>=13;n-- если hdn равно 0 то lft =пропорция а нет то пропорция2  и делаем анимацию в лево lft
+
+      function firstFunc(el) {
+        np = $(el).attr("id");
+        showPic(np);
+        calc();
+      }
+      //сначала берм id и потом включяем функцию
+      function secondFunc(el) {
+        np = $(el).attr("name");
+        showPic(np);
+      }
+      //сначала берйм name и потом включяем функцию
+      function showPic(npe) {
+        for (n = 1; n <= 24; n++) {
+          var nn = n * -20;
+          $("[class^='blind" + n + "']").css(
+            "background",
+            "url('images/" + npe + ".jpg') left " + nn + "px top 0"
+          );
+          $("[class^='blind" + n + "']").css("background-size", "auto 100%");
+        }
+        $(".menu").removeClass("mnOt");
+        $("#" + npe + "").addClass("mnOt");
+        tx = $("#txt");
+
+        rusName(npe);
+        tx.html(rrr);
+      }
+      //сначала делаем условия количества n=1;n<=24;n++ переменная nn=n*(-20) берём жалюзи ивставляем картинки и в лево nn и величина картинки 100%
+      function rotRoll() {
+        roll = $("[class^='blind']");
+        roll_txt = $(".txt_but");
+
+        if (roll.hasClass("blind_op") || roll.hasClass("blind_cl")) {
+          roll.toggleClass("blind_op blind_cl");
+          roll_txt.toggleClass("txt_roling txt_roling1");
+        } else {
+          roll.addClass("blind_op");
+          roll_txt.addClass("txt_roling");
+        }
+        //если имеет клас закрытого blind или открытого blind, перемешать их  и кнопки с поворотами  а в плохом случаи  добавляем открытый blind и кнопку без повортов
+      }
+      function rotClick() {
+        roll_txt1 = $(".txt_butn");
+        if (
+          roll_txt1.hasClass("txt_rolingn") ||
+          roll_txt1.hasClass("txt_rolingn1")
+        ) {
+          roll_txt1.toggleClass("txt_rolingn txt_rolingn1");
+        } else {
+          roll_txt1.addClass("txt_rolingn");
+        }
+        //если имеет клас txt_rolingn или txt_rolingn1 то их смешать в плохом случаи добавит клас txt_rolingn
+      }
+      function moveBlin() {
+        $("[class^='all_blind_bl_']").stop();
+        yyy = $("#hdn").val();
+        switch (yyy) {
+          case "0":
+            for (n = 2; n <= 12; n++) {
+              var roll = $("[class='all_blind_bl_" + n + "']");
+              var posit = roll.position();
+              var pos = posit.left;
+              var lft = 2 * n;
+              var tm = (pos * 2000) / 200;
+              roll.animate({ left: lft }, tm);
+            }
+            if ($("#sel").val() == 10) {
+              for (n = 23; n >= 13; n--) {
+                var roll = $("[class='all_blind_bl_" + n + "']");
+                var posit = roll.position();
+                var pos = posit.left;
+                var lft = 200 - (20 - (n * 2 - 20));
+                var tm = ((lft - pos) * 2000) / 200;
+                roll.animate({ left: lft }, tm);
+              }
+            } else {
+              for (n = 23; n >= 13; n--) {
+                var roll = $("[class='all_blind_bl_" + n + "']");
+                var posit = roll.position();
+                var pos = posit.left;
+                var lft = 235 - (20 - (n * 2 - 20));
+                var tm = ((lft - pos) * 2000) / 200;
+                roll.animate({ left: lft }, tm);
+              }
+              $("#sel").val(12);
+            }
+
+            $("#hdn").val(1);
+            break;
+          case "1":
+            for (n = 2; n <= 12; n++) {
+              var roll = $("[class='all_blind_bl_" + n + "']");
+              var lft = 2 * n + (n - 1) * 20;
+              var posit = roll.position();
+              var pos = posit.left;
+              var tm = (lft * 2000) / 200;
+              roll.animate({ left: lft }, tm);
+            }
+            if ($("#sel").val() == 10) {
+              for (n = 23; n >= 13; n--) {
+                var roll = $("[class='all_blind_bl_" + n + "']");
+                var lft = 2 * (n - 10) + (n - 13) * 20;
+                var posit = roll.position();
+                var pos = posit.left;
+                var tm = (pos * 2000) / 200;
+                roll.animate({ left: lft }, tm);
+              }
+            } else {
+              for (n = 23; n >= 13; n--) {
+                var roll = $("[class='all_blind_bl_" + n + "']");
+                var posit = roll.position();
+                var pos = posit.left;
+                var lft = 2 * (n - 10) + (n - 13) * 20 - 4;
+                var tm = (pos * 2000) / 200;
+                roll.animate({ left: lft }, tm);
+              }
+            }
+            $("#hdn").val(0);
+            break;
+        }
+      }
+      //сначала берём val у hdn и делаем условие если val у hdn ровно 0 то делаем условия количества n=2;n<=12;n++ выбераем все blind потом берём посициюс blind и с лева тоже делаем пропорцию движения и пропорцию времени дальше двигаем blind ис пропорцию
+      //далее делаем ещё одно условия если sel ровно 10 то снова делаем пропорцию времени n=23;n>=13;n-- выбераем все blind потом берём посициюс blind и с лева тоже делаем пропорцию движения и пропорцию времени дальше двигаем blind ис пропорцию а если sel ровно 12 то делаем условия количества n=23;n>=13;n-- выбераем все blind потом берём посициюс blind и с лева тоже делаем пропорцию движения и пропорцию времени дальше двигаем blind ис пропорцию
+      //закончить
+      //val у hdn ровно 1 то делаем условия количества n=2;n<=12;n++ выбераем все blind потом берём посициюс blind и с лева тоже делаем пропорцию движения и пропорцию времени дальше двигаем blind ис пропорцию
+      //далее делаем ещё одно условия если sel ровно 10 то снова делаем пропорцию времени n=23;n>=13;n-- выбераем все blind потом берём посициюс blind и с лева тоже делаем пропорцию движения и пропорцию времени дальше двигаем blind ис пропорцию а если sel ровно 12 то делаем условия количества n=23;n>=13;n-- выбераем все blind потом берём посициюс blind и с лева тоже делаем пропорцию движения и пропорцию времени дальше двигаем blind ис пропорцию
+      function ob_click() {}
+      $(document).ready(function () {
+        //при загрузке
+
+        $("#hdn,#hdn1").val(0); //при загрузке hdn и hdn1 ровно 0
+        $("#sel").val(10); //при загрузке sel ровен 10
+
+        for (n = 1; n <= 12; n++) {
+          $(".wrap1").append(
+            "<div class='all_blind_bl_" +
+              n +
+              "'><div class='square'></div><div class='circle'></div><div class='blind" +
+              n +
+              "'></div></div>"
+          ); //добавить блок
+        }
+        for (n = 13; n <= 24; n++) {
+          $(".wrap2").append(
+            "<div class='all_blind_bl_" +
+              n +
+              "'><div class='square'></div><div class='circle'></div><div class='blind" +
+              n +
+              "'></div></div>"
+          ); //добавить блок
+        }
+        //делаем два условия количества с двума жалюзями n=1;n<=12;n++ и n=13;n<=24;n++ добавляем жалюзи
+        nnn = "nyc";
+        showPic(nnn);
+        $(
+          ".all_blind_bl_11, .all_blind_bl_12, .all_blind_bl_23, .all_blind_bl_24"
+        ).css("display", "none");
+        //не показывать all_blind_bl_11,12,23,24
+        getnewTmDt();
+        $("#rollstr").click(); //открыть
+      });
+      $(document).ready(function () {
+        //при загрузке
+        for (tblbl = 1; tblbl <= 3; tblbl++) {
+          $(".altbl").append(
+            "<table id='tbl" +
+              tblbl +
+              "'><thead><tr><th>id</th><th>1</th><th>2</th></tr></thead><tbody></tbody></table>"
+          );
+        }
+        //делаем условия количества tblbl=1;tblbl<=3;tblbl++ и добавляем шапку таблицы
+        lng = $(".menu").length;
+        //взяли длину масива
+        for (n = 1; n <= lng; n++) {
+          ttt = $(".mn" + n + "").attr("id");
+          price = $(".mn" + n + "").attr("price");
+          price2 = (170 * price) / 100;
+          rusName(ttt);
+          $("#rollstr").append(
+            "<div name='" +
+              ttt +
+              "' onclick='secondFunc(this);calc();' class='rlst' onmouseover='MarqueStop();' onmouseout='MarqueStart();'>" +
+              rrr +
+              "</div>"
+          ); //добавить
+
+          $("#tbl1 tbody").append(
+            "<tr><td>" +
+              ttt +
+              "</td><td>" +
+              price +
+              "</td><td>" +
+              price2 +
+              "</td></tr>"
+          );
+        }
+        //делаем условия количества n=1;n<=lng;n++ берём id и price считаем его русифицыруем и строим таблицу с жалюзями с ценой и marque
+        var lngo = $("#sel_col_wrap option").length;
+        //взяли масив sel_col_wrap option
+        for (obl = 1; obl <= lngo; obl++) {
+          var ooo = $(".cob" + obl + "").attr("value"); //взяли id
+          var priceo = $(".cob" + obl + "").attr("price");
+          rusName(ttt);
+          $("#tbl2 tbody").append(
+            "<tr><td>" + ooo + "</td><td>" + priceo + "</td><td>---</td></tr>"
+          );
+        }
+        //Делаем условия количества obl=1;obl<=lngo;obl++ далее берём value и price русифицыреум и уже окончательно строим тело таблицы tbl2 tbody
+        var lngc = $("#sel_col_win option").length;
+        //взяли масив sel_col_win option
+        for (cbl = 1; cbl <= lngc; cbl++) {
+          var ccc = $(".chas" + cbl + "").attr("value"); //взяли id
+          var pricec = $(".chas" + cbl + "").attr("price");
+          rusName(ttt);
+          $("#tbl3 tbody").append(
+            "<tr><td>" + ccc + "</td><td>" + pricec + "</td><td>---</td></tr>"
+          );
+        }
+        //Делаем условия количества cbl=1;cbl<=lngc;cbl++ далее берём value и price русифицыреум и уже окончательно строим тело таблицы tbl3 tbody
+        calc();
+        var firnumzhal = 0;
+        for (maxtr = 0; maxtr <= lng; maxtr++) {
+          if (
+            $("#tbl1 tbody tr:eq(" + maxtr + ") td:eq(1)").html() > firnumzhal
+          ) {
+            var firnumzhal = $(
+              "#tbl1 tbody tr:eq(" + maxtr + ") td:eq(1)"
+            ).html();
+            var idzhal = $("#tbl1 tbody tr:eq(" + maxtr + ") td:eq(0)").html();
+          }
+        }
+
+        console.log(firnumzhal + idzhal);
+        var secnumzhal = firnumzhal;
+        for (mintr = 0; mintr <= lng; mintr++) {
+          if (
+            $("#tbl1 tbody tr:eq(" + mintr + ") td:eq(1)").html() < secnumzhal
+          ) {
+            var secnumzhal = $(
+              "#tbl1 tbody tr:eq(" + mintr + ") td:eq(1)"
+            ).html();
+            var minidzhal = $(
+              "#tbl1 tbody tr:eq(" + mintr + ") td:eq(0)"
+            ).html();
+          }
+        }
+        console.log(secnumzhal + minidzhal);
+        $("#sum_and_min_ResOfMenu").html(
+          "від " +
+            firnumzhal +
+            " грн (" +
+            idzhal +
+            ") - до " +
+            secnumzhal +
+            " грн (" +
+            minidzhal +
+            ")"
+        );
+
+        var firnumzhal1 = 0;
+        for (maxtr1 = 0; maxtr1 <= lngo; maxtr1++) {
+          if (
+            $("#tbl3 tbody tr:eq(" + maxtr1 + ") td:eq(1)").html() > firnumzhal1
+          ) {
+            var firnumzhal1 = $(
+              "#tbl3 tbody tr:eq(" + maxtr1 + ") td:eq(1)"
+            ).html();
+            var idzhal1 = $(
+              "#tbl3 tbody tr:eq(" + maxtr1 + ") td:eq(0)"
+            ).html();
+          }
+        }
+
+        console.log(firnumzhal1 + idzhal1);
+        var secnumzhal1 = firnumzhal1;
+        for (mintr1 = 0; mintr1 <= lngo; mintr1++) {
+          if (
+            $("#tbl3 tbody tr:eq(" + mintr1 + ") td:eq(1)").html() < secnumzhal1
+          ) {
+            var secnumzhal1 = $(
+              "#tbl3 tbody tr:eq(" + mintr1 + ") td:eq(1)"
+            ).html();
+            var minidzhal1 = $(
+              "#tbl3 tbody tr:eq(" + mintr1 + ") td:eq(0)"
+            ).html();
+          }
+        }
+        console.log(secnumzhal1 + minidzhal1);
+        $("#sum_and_min_ResOfChas").html(
+          "від " +
+            firnumzhal1 +
+            " грн (" +
+            idzhal1 +
+            ") - до " +
+            secnumzhal1 +
+            " грн (" +
+            minidzhal1 +
+            ")"
+        );
+
+        var firnumzhal2 = 0;
+        for (maxtr2 = 0; maxtr2 <= lngc; maxtr2++) {
+          if (
+            $("#tbl2 tbody tr:eq(" + maxtr2 + ") td:eq(1)").html() > firnumzhal2
+          ) {
+            var firnumzhal2 = $(
+              "#tbl2 tbody tr:eq(" + maxtr2 + ") td:eq(1)"
+            ).html();
+            var idzhal2 = $(
+              "#tbl2 tbody tr:eq(" + maxtr2 + ") td:eq(0)"
+            ).html();
+          }
+        }
+
+        console.log(firnumzhal2 + idzhal2);
+        var secnumzhal2 = firnumzhal2;
+        for (mintr2 = 0; mintr2 <= lngc; mintr2++) {
+          if (
+            $("#tbl2 tbody tr:eq(" + mintr2 + ") td:eq(1)").html() < secnumzhal2
+          ) {
+            var secnumzhal2 = $(
+              "#tbl2 tbody tr:eq(" + mintr2 + ") td:eq(1)"
+            ).html();
+            var minidzhal2 = $(
+              "#tbl2 tbody tr:eq(" + mintr2 + ") td:eq(0)"
+            ).html();
+          }
+        }
+        console.log(secnumzhal2 + minidzhal2);
+        $("#sum_and_min_ResOfOb").html(
+          "від " +
+            firnumzhal2 +
+            " грн (" +
+            idzhal2 +
+            ") - до " +
+            secnumzhal2 +
+            " грн (" +
+            minidzhal2 +
+            ")"
+        );
+      });
+      var mrq = document.getElementById("rollstr");
+
+      var isOpera = !!window.opera || navigator.userAgent.indexOf(" OPR/") >= 0; // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
+      var isFirefox = typeof InstallTrigger !== "undefined"; // Firefox 1.0+
+      var isSafari =
+        Object.prototype.toString
+          .call(window.HTMLElement)
+          .indexOf("Constructor") > 0; // At least Safari 3+: "[object HTMLElementConstructor]"
+      var isChrome = !!window.chrome && !isOpera; // Chrome 1+
+      var isIE = /*@cc_on!@*/ false || !!document.documentMode; // At least IE6
+
+      function MarqueStart() {
+        if (isChrome) {
+          mrq.start();
+        } else {
+          mrq.setAttribute("scrollamount", 4, 0);
+        }
+      }
+      function MarqueStop() {
+        if (isChrome) {
+          mrq.stop();
+        } else {
+          mrq.setAttribute("scrollamount", 0, 0);
+        }
+      }
+    </script>
+  </body>
+</html>

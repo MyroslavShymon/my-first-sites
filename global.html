@@ -1,0 +1,66 @@
+<script>
+function rusName(npp){
+switch (npp){
+	case 'sea':rrr='Мороской рисунок';break;//включить риусифицыровать закончить
+	case 'bgb':rrr='BIG BEN';break;//включить риусифицыровать закончить
+	case 'starwars':rrr='Star Wars';break;//включить риусифицыровать закончить
+	case 'park':rrr='парк';break;//включить риусифицыровать закончить
+	case 'water':rrr='Вода';break;//включить риусифицыровать закончить
+	case 'apple':rrr='Логотип Apple';break;//включить риусифицыровать закончить
+	case 'sun':rrr='Фото Солнца';break;//включить риусифицыровать закончить
+	case 'nyc':	rrr='Фото New York city';break;//включить риусифицыровать закончить
+	case 'child':rrr='OggY and Cucarachas';break;//включить риусифицыровать закончить
+	case 'paris':rrr='Фото Парижа';break;default:alert('нет-нет, выполнится вариант выше');//если не выполняется
+	}
+	return rrr; //вернуть rrr
+}
+function calc(){
+$('#tbl1 td, #tbl2 td, #tbl3 td').css('background', 'white')
+var idzh=$('.mnOt').attr('id');
+var tpzh = $('#sel').val();
+if(tpzh==10){num_td=1;}
+else{num_td=2;}
+tbl1_l = $('#tbl1 tbody tr').length;
+for(n=0; n<=tbl1_l; n++){
+	if($('#tbl1 tbody tr:eq('+n+') td:eq(0)').html() == idzh){
+			nr = n;
+	}
+}
+pr=$('#tbl1 tbody tr:eq('+nr+') td:eq('+num_td+')').html();
+$("#tbl1 tbody tr:eq("+nr+") td:eq(0)").css('background','yellow');
+console.log(pr);
+
+var idob=$('#sel_col_wrap').val();
+var tbl2_l = $('#tbl2 tbody tr').length;
+for(n2=0; n2<=tbl2_l; n2++){
+	if($('#tbl2 tbody tr:eq('+n2+') td:eq(0)').html() == idob){
+			nr2 = n2;
+	}
+}
+pr2=$('#tbl2 tbody tr:eq('+nr2+') td:eq(1)').html();
+$("#tbl2 tbody tr:eq("+nr2+") td:eq(0)").css('background','green');
+console.log(pr2);
+
+var idchas=$('#sel_col_win').val();
+var tbl3_l = $('#tbl3 tbody tr').length;
+for(n3=0; n3<=tbl3_l; n3++){
+	if($('#tbl3 tbody tr:eq('+n3+') td:eq(0)').html() == idchas){
+			nr3 = n3;
+	}
+}
+pr3=$('#tbl3 tbody tr:eq('+nr3+') td:eq(1)').html();
+$("#tbl3 tbody tr:eq("+nr3+") td:eq(0)").css('background','blue');
+console.log(pr3);
+summa=parseInt(pr)+parseInt(pr2)+parseInt(pr3);
+console.log(summa);
+ttttt = $('#sum');
+ttttt.html('Цена: '+summa);
+ttttt.attr('nwzh',pr);
+ttttt.attr({
+nwzh:pr,
+nwob:pr2,
+nwchs:pr3
+})
+}
+
+</script>

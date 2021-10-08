@@ -1,0 +1,57 @@
+.modal_back{
+	width:100%;
+	height:100%;
+	background:rgba(0, 0, 0, 0.63);
+	z-index:200000;
+	display:none;
+	position:absolute;
+	top:0;
+}
+.modal_but{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	padding: 1px 8px;
+	height: 20px;
+	border: 1px solid #009cff;
+	left: 0;
+	border-radius: 0 0 0 0;
+	background: #abfcff;
+	color: #009cff;
+	margin: 10px 0 0 0;
+	overflow: visible;
+	border-radius: 4px;
+}
+.modal_but:hover{
+	color: #abfcff;
+	border: 1px solid #abfcff;
+	background: #009cff;
+}
+.modal_bl{
+	position:absolute;
+	margin-top:250px;
+	margin-left:50%;
+	left:-150px;
+	width:300px;
+	padding:4px 15px;
+	color: #abfcff;
+	border: 1px solid #abfcff;
+	background: #009cff;
+	border-radius: 25px;
+}
+.modal_cl{
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	background: #abfcff;
+	color: #009cff;
+margin-top: -24px;
+margin-left: -26px;
+	cursor: pointer;
+	border: 1px solid #009cff;
+}
+.modal_cl{
+	color: #abfcff;
+	border: 1px solid #abfcff;
+	background: #009cff;
+}
