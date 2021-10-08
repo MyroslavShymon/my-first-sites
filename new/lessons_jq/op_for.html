@@ -1,0 +1,45 @@
+
+<div>
+<div class='sqr red' name='1'></div>
+<div class='sqr red' name='2'></div>
+<div class='sqr red' name='3'></div>
+<div class='sqr red' name='4'></div>
+<div class='sqr red' name='5'></div>
+<div class='sqr red' name='6'></div>
+<div class='sqr red' name='7'></div>
+<div class='sqr red' name='8'></div>
+<div class='sqr red' name='9'></div>
+<div class='sqr red' name='10'></div>
+</div>
+<br><br>
+<input id='fn' type='text'>
+<input id='sn' type='text'>
+<br><br>
+<input type='button' onclick='change_back();'>
+<script>
+function change_back(){
+	var fn =$('#fn').val();
+	var sn =$('#sn').val();
+	$('.sqr').css('background','red');
+	$('.sqr').html('');
+	
+	if(fn !='' && sn !=''){
+		if(fn<sn){
+			for(n=fn; n<=sn;n++){
+				$('[name="'+n+'"]').css({'background':'lime','color':'yellow','font-weight':'bold'});
+				$('[name="'+n+'"]').html('AAA');
+				
+			}
+		}
+		else{
+			for(n=sn; n<=fn;n++){
+				$('[name="'+n+'"]').css({'background':'lime','color':'yellow','font-weight':'bold'});
+				$('[name="'+n+'"]').html('AAA');
+				
+			}
+		}
+	}
+	else{alert('fffff');}
+}
+
+</script>

@@ -1,0 +1,81 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Blocks (lesson12)</title>
+	<script type="text/javascript" src="jqu.js"></script>
+	<link rel="stylesheet" href="style_new_menu3.css" />
+</head>
+<body style='text-align:center;position:relative;'>	
+<div id='menu' style='border:1px solid red;width:200px;position:absolute;'>
+				<div class='bl_out'>
+					<div style='font-size:20px;display:inline-block;text-align:center;color:green;font-weight:bolder;width:100%;cursor:pointer;' onclick='show_m(this);'>Местная группа галактик</div>
+					<div class='open_m' style='height:0px;overflow:hidden;transition:0.3s'>
+						<div class='newbl' name='milkway' onclick='show_pic(this);'>Млечный Путь</div>
+						<div class='newbl' name='andromedas' onclick='show_pic(this);'>Андромеда</div>
+						<div class='newbl' name='triangle' onclick='show_pic(this);'>Треугольник</div>
+					</div>
+				</div>
+				
+				<div class='bl_out'>
+					<div style='font-size:20px;display:inline-block;text-align:center;color:green;font-weight:bold;width:100%;cursor:pointer;' onclick='show_m(this);'>Планеты солнечной системы</div>
+					<div class='open_m' style='height:0px;overflow:hidden;transition:0.3s'>
+						<div class='newbl' name='earth' onclick='show_pic(this);'>Земля</div>
+						<div class='newbl' name='mars' onclick='show_pic(this);'>Марс</div>
+						<div class='newbl' name='neptune' onclick='show_pic(this);'>Нептун</div>
+					</div>
+				</div>
+
+				<div class='bl_out'>
+					<div style='font-size:20px;display:inline-block;text-align:center;color:green;font-weight:bold;width:100%;cursor:pointer;' onclick='show_m(this);'>Карликовые планеты</div>
+					<div class='open_m' style='height:0px;overflow:hidden;transition:0.3s'>
+						<div class='newbl' name='pluton' onclick='show_pic(this);'>Плутон</div>
+						<div class='newbl' name='erida' onclick='show_pic(this);'>Эрида</div>
+						<div class='newbl' name='haron' onclick='show_pic(this);'>Харон</div>
+					</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				<div class='bl_out'>
+					<div style='font-size:20px;display:inline-block;text-align:center;color:green;font-weight:bold;width:100%;cursor:pointer;' onclick='show_m(this);'>Уроки</div>
+					<div class='open_m' style='height:0px;overflow:hidden;transition:0.3s'>
+						<div class='newbl' name='op_for' onclick='load_less(this);'>Оператор "for"</div>
+						
+					</div>
+				</div>
+				
+</div>
+
+	<div id='pic' class='pc' style='display:inline-block;border:none;margin:50px 0 0 50px;'>
+	</div>
+<script>
+function load_less(el){
+	n=$(el).attr('name');
+	$('#pic').load("lessons_jq/"+n+".html");
+	}
+	function show_m(el){
+		n =$( el ).parent().children('.open_m');
+	 if ( n.hasClass( "opened" ) ) {
+		n.css('height','0px');
+		n.removeClass('opened');
+	 }
+	 else{
+		$('.open_m').css('height','0px');
+		n.css('height','70px');
+		n.addClass('opened');
+		}
+		
+	}
+	function show_pic(el){
+		n=$(el).attr('name');
+		$('#pic').html('');
+		$('#pic').append("<img src='saf/"+n+".jpg'style='height:300px;'>");
+	}
+
+</script>
+</body>
+</html>

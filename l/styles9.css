@@ -1,0 +1,52 @@
+
+html, body{
+	text-align:center;
+	background:gray;
+	width:100%;
+	padding:0;
+	margin:0;
+	background: linear-gradient(to bottom, cyan 0%, cyan 50%, yellow 50%, yellow 100%);
+	height:100%;
+}
+table{
+	display:inline-block;
+	font-weight:bold;
+}
+th, td{
+	border-radius:5px;
+	padding:10px 10px;
+	font-size:24px;
+}
+th{
+	background:green;
+	color:white;
+	border:1px solid white;
+	box-shadow:3px 3px 4px green;
+}
+td{
+	background:yellow;
+	border:1px solid brown;
+	box-shadow:3px 3px 4px yellow;
+	font-style:italic;	
+}
+.gov{
+	color:purple;
+	text-align:center;
+}
+.pe{
+	color:lime;
+	text-align:center;
+}
+.sz{
+	color:blue;
+	text-align:center;
+}
+.num{
+	color:cyan;
+	text-align:center;
+}
+.r9{
+	width:200px;
+	height:200px;
+	display:inline-block;
+}

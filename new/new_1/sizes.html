@@ -1,0 +1,48 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Blocks (lesson12)</title>
+	<script type="text/javascript" src="jqu.js"></script>
+	<link rel="stylesheet" href="style_new2.css" />
+</head>
+<body>
+<div id='bl_1' class='bl_1_2' style='top:10px;left:10px; width:300px;height:100px;'></div>
+<div id='bl_2' class='bl_1_2' style='top:10px;width:300px;height:100px;' ></div>
+<div id='bl_3' class='bl_1_2' style='top:10px;width:300px;height:100px;'></div>
+<div id='bl_4' class='bl_1_2' style='top:10px;width:300px;height:100px;' ></div>
+<div id='bl_5' class='bl_1_2' style='top:10px;width:300px;height:100px;'></div>
+<div id='bl_6' class='bl_1_2' style='top:10px;right:10px;width:300px;height:100px; '></div>
+
+<div id='bl_7' class='bl_1_2' style='top:126px;left:10px; height:100px;width:300px;'></div>
+<div id='bl_8' class='bl_1_2' style='top:126px;width:300px;height:100px;' ></div>
+<div id='bl_9' class='bl_1_2' style='top:126px;width:300px;height:100px;'></div>
+<div id='bl_10' class='bl_1_2' style='top:126px;width:300px;height:100px;' ></div>
+<div id='bl_11' class='bl_1_2' style='top:126px;width:300px;height:100px;'></div>
+<div id='bl_12' class='bl_1_2' style='top:126px;right:10px;width:300px;height:100px; '></div>
+
+<script>
+function rsz(){
+var	wb = $('body').width();
+var newwidth= (wb-70)/6;
+$('#bl_1,#bl_2,#bl_3,#bl_4,#bl_5,#bl_6,#bl_7,#bl_8,#bl_9,#bl_10,#bl_11,#bl_12').outerWidth(newwidth);
+$('#bl_1,#bl_2,#bl_3,#bl_4,#bl_5,#bl_6').html(newwidth);
+$('#bl_2,#bl_8').css('left',newwidth+20);
+$('#bl_3,#bl_9').css('left',newwidth*2+30);
+$('#bl_4,#bl_10').css('right',newwidth*2+30);
+$('#bl_5,#bl_11').css('right',newwidth+20);
+var	hb = $('body').height();
+var newheight = hb-106-10-10-10;
+$('#bl_7,#bl_8,#bl_9,#bl_10,#bl_11,#bl_12').outerHeight(newheight);
+$('#bl_7,#bl_8,#bl_9,#bl_10,#bl_11,#bl_12').html(newheight);
+}
+$(window).resize(
+function(){rsz();}
+);
+$(document).ready(
+function(){rsz();}
+);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+html, body{
+	text-align:center;
+	background:gray;
+	width:100%;
+	padding:0;
+	margin:0;
+	background: linear-gradient(to bottom, cyan 0%, cyan 50%, yellow 50%, yellow 100%);
+	height:100%;
+}
+input{
+	background:yellow;
+	padding:4.5px;
+	border-radius:5px;
+	border:2px solid brown;
+	box-shadow:2px 2px 4px brown;
+	color:purple;
+}
+.red{
+	background:orange;
+	padding:4.5px;
+	border-radius:5px;
+	border:2px solid red;
+	box-shadow:2px 2px 4px red;
+	color:purple;
+}
+.green{
+	background:lime;
+	padding:4.5px;
+	border-radius:5px;
+	border:2px solid lime;
+	box-shadow:2px 2px 4px green;
+	color:purple;
+}

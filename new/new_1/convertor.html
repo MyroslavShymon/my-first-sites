@@ -1,0 +1,100 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Blocks (lesson12)</title>
+	<script type="text/javascript" src="jqu.js"></script>
+	<link rel="stylesheet" href="style_new1.css" />
+</head>
+<body>
+
+<div>
+<label><input type='text' value='30' id='kurs' style='width:40px' ></label><br>
+<select id='perr'>
+			<option>Євро в гривні</option>
+			<option>Гривні в євро</option>
+</select><br>
+<label><input type='text'id='euro' onkeypress='resetResultat();' ></label><br>
+<input type='button'  value='порахувати' onclick='resultat();'><br>
+<input type='button'  value='очистити' onclick='resetResultat();'><br>
+<label><input type='text' id='res' style='background:none;'readonly></label>
+</div>
+<br><br>
+
+<!-- /////////////////////// -->
+
+<div class='smth_out' style='display:inline-block;'>
+	<div class='red'></div>
+	<div class='green'></div>
+	<div class='blue'></div>
+</div><br><br>
+<input type='text' id='txt_fl'>
+<br>
+<select id='clr'>
+<option>red</option>
+<option>green</option>
+<option>blue</option>
+</select><br>
+
+<input type='button' onclick='adding();'><br><br>
+<!-- /////////////////////// -->
+	<div class='smth_out'>
+			<div class='smth'></div>
+			<div class='smth'></div>
+			<div class='smth'></div>
+	</div>
+		<br>
+	<input type='button' value='red' readonly onclick='smnt(this);'>
+	<input type='button' value='green' readonly onclick='smnt(this);'>
+	<input type='button' value='blue' readonly onclick='smnt(this);'>
+<!-- /////////////////////// --><br><br><br>
+	<div class='smth_out'>
+	<div class='smtv' style='cursor:pointer;' onclick='vect(this);'>65465</div>
+	<div class='smtv' style='cursor:pointer;' onclick='vect(this);'>54455</div>
+	<div class='smtv' style='cursor:pointer;' onclick='vect(this);'>25454</div>
+	</div><br><br>
+	<div id='rnr' class='red' ></div>
+
+<script>
+function smnt(el){
+		var sss = $(el).val();
+		$('.smth').css('color',sss);
+		$('.smth').css('border-color',sss);
+		$('.smth').html(sss);
+}
+
+
+
+function resultat(){
+var kurs = parseInt( $('#kurs').val() );
+var summa = parseInt( $('#euro').val() );
+var per = $('#perr').val();
+
+if(per == 'Євро в гривні') {rss =kurs*summa;}
+else {rss =summa/kurs;}
+$('#res').val(rss);
+$('#res').css('background','lime');
+}
+
+function resetResultat(){
+$('#res').css('background','white');
+$('#res').val('');
+}
+//....................................................
+function adding(){
+var cls = $('#clr').val();
+var txt = $('#txt_fl').val();
+var rrr = '.'+cls;
+$(rrr).html(txt);
+}
+//.............................................
+function vect(el){
+var vec = $(el).html();
+$('#rnr').html(vec);
+$('.smtv').removeClass('red');
+$(el).addClass('red');
+}
+</script>
+
+</body>
+</html>

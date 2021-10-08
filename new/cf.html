@@ -1,0 +1,57 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Blocks (cf)</title>
+	<script type="text/javascript" src="jqu.js"></script>
+	<link rel="stylesheet" href="style_cf.css" />
+</head>
+<body>
+<div class='menu' id='select_block'>
+	<div class='bl1'>
+		<label class='lb1'>Материк<select class='sel1'>
+			<option>Євразія</option>
+			<option>Африка</option>
+			<option>Північна Америка</option>
+			<option>Південа Америка</option>
+			<option>Австралія</option>
+			<option>Антарктида</option>
+		</select></label>
+	</div><br><br><br><br><br><br><br><br><br><br><br><br>
+<select>
+<option></option>
+<option></option>
+<option></option>
+<option></option>
+<option></option>
+</select><br><BR><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<select>
+<option></option>
+<option></option>
+<option></option>
+<option></option>
+<option></option>
+</select>
+</div>
+<div class='menu_resultat' id='resultat_block'></div>
+<script>
+function rsz(){
+var bh_sz = $('body').height();
+var rsz_hght = bh_sz-10;
+$('#select_block,#resultat_block').outerHeight(rsz_hght);
+///////////////////////////////////////////////////////////
+var bw_sz = $('body').width();
+var bl_sz = $('#select_block').outerWidth();
+var rsz_wdth = bw_sz-bl_sz-30;
+$('#resultat_block').outerWidth(rsz_wdth);
+}
+$(window).resize(function(){rsz();});
+$(document).ready(function(){rsz();});
+//////////////////////////////////////////////////////////
+function rt(){
+$
+}
+
+</script>
+</body>
+</html>

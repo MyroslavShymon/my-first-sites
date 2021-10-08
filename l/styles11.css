@@ -1,0 +1,120 @@
+
+html, body{
+	text-align:center;
+	background:gray;
+	width:100%;
+	padding:0;
+	margin:0;
+	background: linear-gradient(to bottom, cyan 0%, cyan 50%, yellow 50%, yellow 100%);
+	height:100%;
+}
+.smth{
+	position:relative;
+	display:inline-block;
+	width:200px;
+	height:350px;
+	background: linear-gradient(to top right,darkgreen 0%,LawnGreen 50%,GreenYellow 51%,lime 100%);	
+	margin-top:50px;
+	border-radius:100px 100px 0 0;
+	border:3px solid DarkSeaGreen;
+	box-shadow: 2px 2px 3px green;
+	transition:1s;
+}
+.smth:hover{
+	background: linear-gradient(to top right,#6959CD 0%,blue 50%,#63B8FF 51%,cyan 100%);
+	border:3px solid #00B2EE;
+	box-shadow: 3px 3px 4px #836FFF;
+}
+.pic{
+	position:absolute;
+	width:100px;
+	height:150px;
+	background:url(images/towns/tk1.jpg);
+	background-size:100% 100%;
+	border-radius:100px 100px 0 0;
+	border:3px solid #00B2EE;
+	top:100px;
+	right:46px;
+	z-index:3;
+}
+.pic2{
+	position:absolute;
+	width:100px;
+	height:150px;
+	background:url(images/towns/tk2.jpg);
+	background-size:100% 100%;
+	border-radius:100px 100px 0 0;
+	border:3px solid DarkSeaGreen ;
+	top:100px;
+	right:46px;
+	z-index:4;
+	transition:1s;
+}
+.smth:hover .pic2{opacity:0;}
+.txt{
+position: absolute;
+bottom: 30px;
+color: #FFFF00;
+font-weight: bold;
+font-size: 25px;
+transition: 0.3s;
+width: 100%;
+text-align: center;
+}
+
+
+.smth:hover .txt{
+	font-size:35px;
+}
+.gerb_ukr{
+	position:absolute;
+	width:40px;
+	height:55px;
+	background:url(images/towns/gerb_ukr.png);
+	background-size:100% 100%;
+	top:100px;
+	right:46px;
+	z-index:1;
+	opacity:0;
+	transition:1s;
+}
+.smth:hover .gerb_ukr{
+	opacity:1;
+	transform:rotate(360deg);
+	top:-10px;
+	right:15px;
+}
+.prap_ukr{
+	position:absolute;
+	width:0px;
+	height:0px;
+	background:url(images/towns/prap_ukr.png);
+	background-size:100% 100%;
+	top:150px;
+	left:120px;
+	z-index:2;
+	opacity:0;
+	transition:1s;
+}
+.smth:hover .prap_ukr{
+	opacity:1;
+	transform:rotate(360deg);
+	top:-10px;
+	left:15px;
+	width:70px;
+	height:55px;
+}
+.out_block{cursor:pointer;transition:0.4s;}
+.in_block{
+	position:absolute;
+	width:300px;
+	height:400px;
+	left:0px;
+	top:0px;
+	background:linear-gradient(to bottom, orange 0%, yellow 25%, yellow 75%, lime 100%);
+	transition:0.4s;
+}
+.out_block:hover .in_block {
+	top:-200px;
+	transition:0.4s;
+}

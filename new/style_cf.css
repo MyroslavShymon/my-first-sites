@@ -1,0 +1,49 @@
+
+html, body{
+	text-align:center;
+	background:gray;
+	width:100%;
+	padding:0;
+	margin:0;
+	background: linear-gradient(to bottom, cyan 0%, cyan 50%, yellow 50%, yellow 100%);
+	height:100%;
+}
+body{position:relative;}
+.menu, .menu_resultat{
+	position:absolute; 
+	border:2px solid grey;
+	border-radius:5px;
+	top:5px;
+}
+.menu{
+	left:10px;
+	height:100px;
+	width:300px;
+}
+.menu_resultat{
+	right:10px;
+	height:100px;
+	width:100px;
+}
+.lb1{
+	position:absolute;
+	font-size:25px;
+	top:0px;
+	left:20px;
+}
+.sel1{
+	position:absolute;
+	width:100px;
+	height:20px;
+	left:130px;
+	top:0px;
+}
+.bl1, .bl2, .bl3{
+	position:absolute;
+	top:5px;
+	right:15px;
+	width:270px;
+	height:35px;
+	border:2px solid grey;
+	border-radius:5px;
+}

@@ -1,0 +1,100 @@
+
+html, body{
+	text-align:center;
+	background:gray;
+	width:100%;
+	padding:0;
+	margin:0;
+	background: linear-gradient(to bottom, cyan 0%, cyan 50%, yellow 50%, yellow 100%);
+	height:100%;
+}
+body{
+	position:relative;
+}
+table{
+	width:100%;
+	height:100%;
+}
+table td{
+	border:2px solid white;
+	border-radius:5px;
+	padding:0;
+	width:20%;
+	height:25%;
+}
+input{text-align:center;border:1px solid green;border-radius:4px;color:green;margin:5px 0;}
+div{background:none;border:2px solid green;width:300px;display:inline-block;border-radius:6px;}
+.pic{
+	width:100%;
+	height:100%;
+	border-radius:4px;
+	opacity:0.5;
+	transition:0.2s;
+	color:white;
+	font-size:35px;
+	cursor:pointer;
+}
+.pic:hover{
+	opacity:1;
+	color:Yellow;
+	font-size:45px;	
+}
+.b1{
+	background:url('../images/cars/mers_yellow.jpg');
+}
+.b2{
+	background:url('../images/cars/mers_red.jpg');
+}
+.b3{
+	background:url('../images/cars/mers_black.jpg');
+}
+.b4{
+	background:url('../images/cars/mers_white.jpg');
+}
+.b5{
+	background:url('../images/cars/mers_blue.jpg');
+}
+.f1{
+	background:url('../images/cars/ford_yellow.jpg');
+}
+.f2{
+	background:url('../images/cars/ford_blue.jpg');
+}
+.f3{
+	background:url('../images/cars/ford_red.jpg');
+}
+.f4{
+	background:url('../images/cars/ford_black.jpg');
+}
+.f5{
+	background:url('../images/cars/ford_white.jpg');
+}
+.j1{
+	background:url('../images/cars/jeep_black.jpg');
+}
+.j2{
+	background:url('../images/cars/jeep_white.jpg');
+}
+.bm1{
+	background:url('../images/cars/bmw_white.jpg');
+}
+.bm2{
+	background:url('../images/cars/bmw_black.jpg');
+}
+.bm1, .bm2, .j1, .j2, .f5, .f4, .f3, .f2, .f1, .b5, .b4, .b3, .b2, .b1{
+	background-size:100% 100%;
+}
+.pic:before{
+	content: 'блок ';
+}
+.smth_out div{
+	width:75px;
+	height:50px;
+	margin-top:3px;
+	background:white;
+	display:inline-block;
+	vertical-align:top;
+}
+.red{color:red;border:2px solid red;}
+.green{color:green;border:2px solid green;}
+.blue{color:blue;border:2px solid blue;}

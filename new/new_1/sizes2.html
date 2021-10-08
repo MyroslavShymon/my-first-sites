@@ -1,0 +1,55 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Blocks (lesson12)</title>
+	<script type="text/javascript" src="jqu.js"></script>
+	<link rel="stylesheet" href="style_new2.css" />
+</head>
+<body>
+<div>
+	<div style='width:350px;height:700px;position:absolute;top:10px;left:10px;border:1px solid green;' id='zmn_bl'></div>
+		<input type='text' class='prepps' id='f_prepp'style='top:10px'onkeypress='resetResultat();'>
+			<select id='zdl' style='width:50px;position:absolute;top:35px;left:370px;'><option>+</option><option>-</option><option>/</option><option>*</option></select>	
+		<input type='text' class='prepps' id='s_prepp'style='top:60px'onkeypress='resetResultat();'>
+		<input style='position:absolute;top:85px;left:370px;'type='button' value='порахувати' onclick='resultat();'>
+		<input type='text'style='position:absolute;top:110px;left:370px;'class='prepps'id='res'>
+</div>		
+<script>
+function rsz(){
+var	hab = $('body').height();
+var hbv= hab-20;
+$('#zmn_bl').outerHeight(hbv);
+$('#zmn_bl').html(hbv);
+}
+$(window).resize(
+function(){rsz();}
+);
+$(document).ready(
+function(){rsz();}
+);
+//////////////////////////////////////////////////////////////////////////
+function resultat() {
+var a =  parseInt($('#f_prepp').val());
+var b =  parseInt($('#s_prepp').val());
+var s = $('#zdl').val();
+
+if(s == '+') {c = a+b;}
+if(s == '-') {c = a-b;}
+if(s == '*') {c = a*b;}
+if(s == '/') {c = a/b;}
+
+$('#res').val(c);
+$('#res').css('background','yellow')
+$('#zmn_bl').outerHeight(c);
+}
+function resetResultat() {
+$('#res').css('background','none')
+$('#res').val('')
+}
+
+
+</script>
+
+</body>
+</html>

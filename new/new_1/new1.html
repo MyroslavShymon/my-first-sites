@@ -1,0 +1,76 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Blocks (lesson12)</title>
+	<script type="text/javascript" src="jqu.js"></script>
+	<link rel="stylesheet" href="style_new1.css" />
+</head>
+<body>
+<table>
+<tbody>
+	<tr>
+	<td><div class='pic f1' onclick='hna(this);' >1</div></td>
+	<td><div class='pic f2' onclick='hna(this);' >2</div></td>
+	<td><div class='pic f3' onclick='hna(this);' >3</div></td>
+	<td><div class='pic f4' onclick='hna(this);' >4</div></td>
+	<td><div class='pic f5' onclick='hna(this);' >5</div></td>
+
+	</tr>
+	<tr>
+	<td><div class='pic j1' onclick='hna(this);'>6</div></td>
+	<td rowspan='2' colspan='3' style='vertical-align:top;text-align:center;'>
+		<input id='fn' type='text' onkeypress='resetResultat();'> <!-- перша цифра-->
+		
+			<select id='mathf'> 
+				<option>+</option>
+				<option>-</option>
+				<option>/</option>
+				<option>*</option>
+			</select> <!-- дія -->
+		<input id='sn' type='text' onkeypress='resetResultat();'> <!-- друга цифра-->
+		<br><br>
+		<input type='button' value='порахувати' onclick='resultat();'><br><br>
+		<input id='res' type='text'> <!-- результат-->
+	</td>
+	<td><div class='pic j2'>7</div></td>
+	</tr>
+	<tr>
+	<td><div class='pic bm2'>8</div></td>
+	<td><div class='pic bm1'>9</div></td>
+	</tr>
+	<tr>
+	<td><div class='pic b5'>10</div></td>
+	<td><div class='pic b4'>11</div></td>
+	<td><div class='pic b3'>12</div></td>
+	<td><div class='pic b2'>13</div></td>
+	<td><div class='pic b1'>14</div></td>
+	</tr>
+</tbody>
+</table>
+
+
+<script>
+function resultat() {
+var a =  parseInt($('#fn').val());
+var b =  parseInt($('#sn').val());
+var s = $('#mathf').val();
+
+if(s == '+') {c = a+b;}
+if(s == '-') {c = a-b;}
+if(s == '*') {c = a*b;}
+if(s == '/') {c = a/b;}
+
+$('#res').val(c);
+$('#res').css('background','yellow')}
+//console.log(c);
+function resetResultat() {
+$('#res').css('background','white')
+$('#res').val('')
+}
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Blocks (lesson12)</title>
+	<script type="text/javascript" src="jqu.js"></script>
+	<link rel="stylesheet" href="style_new_menu3.css" />
+</head>
+<body>
+<br>
+<select id='clr'>
+<option>lime</option>
+<option>orange</option>
+<option>red</option>
+	<option>blue</option>
+</select><br><br>
+<select id='pndd'>
+<option>sqr</option>
+<option>rnd</option>
+</select><br><br>
+<input type='button' onclick='add();'>
+<div id='bl'></div>
+<input type='text' id='txt' onkeyup='rem();'>
+<input type='hidden' id='n' value='0'><br><br>
+<input type='button' value='очистить' onclick='rem();'>
+<script>
+function add(){
+	var clr =$('#clr').val();
+	var pndd =$('#pndd').val();
+	var txt =parseInt( $('#txt').val() );
+	var n =parseInt( $('#n').val() );
+	n++;
+if(n<=txt){$('#bl').append("<div class='"+clr+" "+pndd+"'><div>");$('#n').val(n);}
+}
+function rem(){
+$('#n').val('0');
+$('#bl').html('');
+}
+</script>
+</body>
+</html>
