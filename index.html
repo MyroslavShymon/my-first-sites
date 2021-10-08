@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type"content="text/html; charset=utf-8" />
+	<title>Universe</title>
+	<script type="text/javascript"src="js/jquery-2.2.0.min.js"></script>
+	<link rel="stylesheet" href="css/universe.css"/>
+</head>
+<body>
+	<div id='menu_click'>
+		<div class='cl' name='planet' onclick='show(this);clic(this);'>Planet</div>
+		<div class='cl' name='galaxy' onclick='show(this);clic(this);'>Galaxy</div>
+		<div class='cl' name='stars' onclick='show(this);clic(this);'>Stars</div>
+	</div>
+	<div id='menu_open'></div>
+	<div id='menu_pic'>
+		<div id='n_bl'></div>
+		<div id='p_bl'></div>
+		<div id='t_bl'></div>
+	</div>
+	<div id='tyt'>
+		<img src='images/jupiter.png'>
+	</div>
+	<script>
+		function os(el){
+		$('.some_galaxy').removeClass('moo');
+		$(el).addClass('moo');
+		}
+		function clic(el){
+		$('.cl').removeClass('moo');
+		$(el).addClass('moo');
+		$('#menu_open,#menu_pic').css('display','block');
+		$('#tyt').css('display','none');
+		}
+		function shows(el){
+		var np = $(el).html();
+		$('#n_bl').html(np);
+		var atrnm = $(el).attr('name');
+		$('#p_bl').html('').append("<img src='images/"+atrnm+".png'>");
+		$('#t_bl').load("menu_open/"+atrnm+".html")
+		}
+
+		function show(el){
+		si = $(el).attr('name');
+		$('#menu_open').load("menu_open/"+si+".html");
+		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		function rsz(){ 
+		var	wb = $('body').width();
+		var	hb = $('body').height();
+		var nmcw = wb-20;
+		$('#menu_click').outerWidth(nmcw);
+		var ow = $('#menu_open').outerWidth();
+		var now = wb-30-ow;
+		$('#menu_pic').outerWidth(now);
+		$('#menu_open,#tyt,#menu_pic').outerHeight(hb - 84);
+		$('#tyt').outerWidth(wb-20);
+
+		}
+		$(window).resize(function(){rsz();});
+		$(document).ready(function(){rsz();});
+	</script>
+</body>
+</html>

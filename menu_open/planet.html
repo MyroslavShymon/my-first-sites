@@ -1,0 +1,78 @@
+
+<div name='mercury' id='fi_some_planet' class='some_galaxy' onclick='shows(this);os(this)'>Меркурий</div>
+<div name='earth' id='fi_some_planet' class='some_galaxy' onclick='shows(this);os(this)'>Земля</div>
+<div name='jupiter' id='fi_some_planet' class='some_galaxy' onclick='shows(this);os(this)'>Юпитер</div>
+<div name='neptune' id='fi_some_planet' class='some_galaxy' onclick='shows(this);os(this)'>Нептун</div>
+
+<br><br><br><br><br>
+	<div class='ab_op'>
+		<div class='topm' onclick='show_others(this);'>
+			<div style='position:absolute;top:3px;left:5px;'>jhfghjfg</div>
+			<div class='arrt'>&#9654;</div>
+		</div>
+		<div class='ot'>
+			<div style='position:relative;width:180px;margin-left:20px;'>
+				<div class='topmin' onclick='showin_others(this);'>
+					<div style='position:absolute;top:3px;left:5px;'>55555</div>
+					<div class='arrtin'>&#9654;</div>
+				</div>
+				<div class='otin'>jhgjhg</div>
+								
+			</div>
+			<div style='position:relative;width:180px;margin-left:20px;'>
+				<div class='topmin' onclick='showin_others(this);'>
+					<div style='position:absolute;top:3px;left:5px;'>55555</div>
+					<div class='arrtin'>&#9654;</div>
+				</div>
+				<div class='otin'>jhgjhg</div>
+								
+			</div>
+		</div>
+		
+	</div>
+	<div class='ab_op'>
+		<div class='topm' onclick='show_others(this);'>
+			<div style='position:absolute;top:3px;left:5px;'>jhfghjfg</div>
+			<div class='arrt'>&#9654;</div>
+		</div>
+		<div class='ot'>
+			<div style='position:relative;width:180px;margin-left:20px;'>
+				<div class='topmin' onclick='showin_others(this);'>
+					<div style='position:absolute;top:3px;left:5px;'>55555</div>
+					<div class='arrtin'>&#9654;</div>
+				</div>
+				<div class='otin'>jhgjhg</div>
+								
+			</div>
+			<div style='position:relative;width:180px;margin-left:20px;'>
+				<div class='topmin' onclick='showin_others(this);'>
+					<div style='position:absolute;top:3px;left:5px;'>55555</div>
+					<div class='arrtin'>&#9654;</div>
+				</div>
+				<div class='otin'>jhgjhg</div>
+								
+			</div>
+		</div>
+		
+	</div>
+
+	
+
+<script>
+ var t = 500;
+ 
+ 
+function show_others(el){
+$('.arrt_op').removeClass('arrt_op');
+$(el).children('.arrt').addClass('arrt_op'); 
+$('.ot').slideUp(t);
+$(el).parent().children('.ot').slideToggle(t);
+}
+
+function showin_others(el){
+$('.arrtin_op').removeClass('arrtin_op');
+$(el).children('.arrtin').addClass('arrtin_op');
+ $('.otin').slideUp(t);
+$(el).parent().children('.otin').slideToggle(t);
+} 
+</script>

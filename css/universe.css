@@ -1,0 +1,143 @@
+
+html, body{
+	width:100%;
+	padding:0;
+	margin:0;
+	height:100%;
+	text-align:center;
+
+}
+body{
+	position:relative;
+	background:url(../images/universe.jpg);
+	background-size:100% 100%;
+	background-size:cover;
+}
+#menu_pic, #menu_open, #menu_click, #menu_other{
+	border:2px solid blue;
+	position:absolute;
+}
+#menu_click{
+	top:10px;
+	left:10px;
+	height:50px;
+	
+}
+#menu_open{
+	width:200px;
+	left:10px;
+}
+#menu_open, #menu_pic{
+	top:74px;
+	display:none;
+}
+#menu_pic{
+	left:224px;
+}
+.cl{  
+	display:inline-block;
+	width:250px;
+	height:20px;
+	margin:15px 15px 15px 15px;
+	text-align:center;
+	color:#c0c6e6;
+	border:2px solid rgb(6, 0, 255);
+	line-height:20px;
+	font-size:30px;
+	cursor:pointer;
+	border-radius:50px;
+	background:rgba(0, 255, 255, 0.62);
+}
+.cl:hover{
+	color:#c0c6e6;
+	border:1px solid rgba(0, 255, 228, 0.74);
+	transition:0.4s;
+	background:rgba(0, 75, 255, 0.21);
+}
+.some_galaxy{
+	width:100%;
+	height:30px;
+	text-align:center;
+	color:#c0c6e6;
+	border:1px solid rgb(6, 0, 255);
+	line-height:30px;
+	cursor:pointer;
+	font-size:22px;
+	background:rgba(0, 255, 255, 0.62);
+	margin:0 0 3px;
+}
+.some_galaxy:hover{
+	color:#c0c6e6;
+	border:1px solid rgba(0, 255, 228, 0.74);
+	transition:0.4s;
+	background:rgba(0, 75, 255, 0.21);
+}	
+#p_bl img{
+	max-height:300px;
+	margin-top: 35px;
+}
+#menu_other{
+	width:200px;
+	height:300px;
+	bottom:10px;
+	left:10px;
+}
+#bl{
+	font-size:20px;
+	display:inline-block;
+	text-align:center;
+	color:green;
+	font-weight:bold;
+	width:100%;
+	cursor:pointer;
+}
+
+#n_bl{
+	width:100%;
+	height:50px;
+	text-align:center;
+	color:#c0c6e6;
+	line-height:50px;
+	cursor:pointer;
+	font-size:50px;
+}
+.moo{
+	color:black;
+	background:rgba(0, 255, 255, 0.32);
+	border:1px solid rgba(0, 138, 255, 0.7);
+}
+#tyt{
+	position:absolute;
+	left:10px;
+	top:74px;
+	z-index:50;
+}
+#tyt img{
+	max-height:800px;
+}
+#t_bl{
+	margin-top:15px;
+	color:#c0c6e6;
+	font-size:20px;
+	font-weight:bold;
+}
+.rl_bd, .ab_op, .ab_mn{
+	display:block;
+	width:100%;
+}
+
+
+.ab_op{
+	
+	border-color:rgb(6, 0, 255);
+	line-height:25px;
+	
+	
+}
+.topm, .topmin{
+	width:100%;text-align:center;color:#c0c6e6;font-size:25px;background:rgba(0, 255, 255, 0.62);cursor:pointer;border-radius:2px;height:30px;position:relative;
+}
+.ot, .otin{display:none;margin-right:12px;}
+
+.arrt, .arrtin{position:absolute;right:5px;top:3px;transform:rotate(0deg);transition:0.5s;}
+.arrt_op, .arrtin_op{transform:rotate(90deg);transition:0.5s;}
