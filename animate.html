@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>World</title>
+	<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+	
+</head>
+<body>
+<input type='button' onclick='show_an();'>
+<br><br>
+<div class='divan close' style='display:inline-block; border:2px solid green;width:100px;height:100px;'></div>
+<div class='divan close' style='display:inline-block; border:2px solid green;width:100px;height:100px;'></div>
+<div class='divan close' style='display:inline-block; border:2px solid green;width:100px;height:100px;'></div>
+<br>
+<div class='divan close' style='display:inline-block; border:2px solid green;width:100px;height:100px;'></div>
+<div class='divan close' style='display:inline-block; border:2px solid green;width:100px;height:100px;'></div>
+<div class='divan close' style='display:inline-block; border:2px solid green;width:100px;height:100px;'></div>
+
+<script>
+function show_an(){
+if($('.divan').hasClass('close')){
+$('.divan')
+	.animate({height:"300px"},500)
+	.animate({width:"300px",fontSize: "30px"},500)
+	.removeClass('close')
+	.html('open')
+	;
+	
+}
+else{$('.divan')
+	.animate({height:"100px"},500)
+	.animate({width:"100px", fontSize: "15px"},500)
+	.addClass('close')
+	.html('close');
+}
+}
+
+</script>
+</body>
+
+</html>

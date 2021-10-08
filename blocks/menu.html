@@ -1,0 +1,50 @@
+<div class='wrap_menu' onmouseover='show_menu(this);' onmouseout='close_menu(this);'>
+	<div class='but_menu'>ГРЕЦИЯ</div>
+	<div class='block_menu'>
+		<div class='cont_menu' folder='greece' year='15 тыс до.н.э..' name='aphine' onclick='show_town(this);'>Афины</div>
+		<div class='cont_menu' folder='greece' year='315 год д.н.э.' name='sal' onclick='show_town(this);'>Салоники</div>
+		<div class='cont_menu' folder='greece' year='5 тыс до.н.э.' name='pir' onclick='show_town(this);'>Пирей</div>
+		<div class='cont_menu' folder='greece' year='6 тыс до.н.э.' name='ir' onclick='show_town(this);'>Ираклион</div>
+		<div class='cont_menu' folder='greece' year='2.5 тыс до.н.э.' name='prr' onclick='show_town(this);'>Перистери</div>
+	</div>
+</div>
+<div class='wrap_menu' onmouseover='show_menu(this);' onmouseout='close_menu(this);'>
+	<div class='but_menu'>ЕГИПЕТ</div>
+	<div class='block_menu'>
+		<div class='cont_menu' folder='egypt' year='5тыс до.н.э.' name='nex' onclick='show_town(this);'>Нехен</div>
+		<div class='cont_menu' folder='egypt' year='4тыс до.н.э.' name='neh' onclick='show_town(this);'>Нехеб</div>
+		<div class='cont_menu' folder='egypt' year='5тыс до.н.э.' name='memfis' onclick='show_town(this);'>Мемфис</div>
+		<div class='cont_menu' folder='egypt' year='6тыс до.н.э.' name='fivi' onclick='show_town(this);'>Фивы</div>
+		<div class='cont_menu' folder='egypt' year='1355 год до н. э.' name='axetaton' onclick='show_town(this);'>Ахетатон</div>
+	</div>
+</div>
+<div class='wrap_menu' onmouseover='show_menu(this);' onmouseout='close_menu(this);'>
+	<div class='but_menu'>РИМ</div>
+	<div class='block_menu'>
+		<div class='cont_menu' folder='rome' year='823 год до н. э.' name='karf' onclick='show_town(this);'>Карфаген</div>
+		<div class='cont_menu' folder='rome' year='16 год до н. э.' name='tr' onclick='show_town(this);'>Трир</div>
+		<div class='cont_menu' folder='rome' year='753 год до н. э.' name='rome' onclick='show_town(this);'>Рим</div>
+		<div class='cont_menu' folder='rome' year='3700 год до н. э.' name='jer' onclick='show_town(this);'>Иерусалим</div>
+		<div class='cont_menu' folder='rome' year='541 год до н. э.' name='ab' onclick='show_town(this);'>Абдеры</div>
+	</div>
+</div>
+<script>
+function show_menu(el){
+	$(el).children('.block_menu').css('height', 'auto');
+}
+function close_menu(el){
+	$(el).children('.block_menu').css('height', '0px');
+	}
+function show_town(el){
+var nft = $(el).html();
+$('#name_town').html(nft);
+$('.cont_menu').parent().css('height','0px');
+var atrnm = $(el).attr('name');
+var atrfl = $(el).attr('folder');
+var atry = $(el).attr('year');
+$('#pic_town').html('').append("<img src='pics/"+atrfl+"/"+atrnm+".jpg'>");
+$('#year').html('').append('Год основания: '+atry);
+$('#contr').html('').append('Страна: '+$(el).parent().parent().children('.but_menu').html());
+$('#txt_about_town').load("pics/"+atrfl+"/"+atrnm+".html")
+}
+</script>
